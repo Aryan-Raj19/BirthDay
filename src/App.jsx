@@ -3,12 +3,14 @@ import "./App.css";
 import IntroCard from "./Components/IntroCard";
 import Poems from "./Components/Poems";
 import Outro from "./Components/Outro";
+import StartScreen from "./Components/StartScreen";
+import RandomWindow from "./Components/RandomWindow";
 import { Volume2, VolumeX } from "lucide-react";
-import StartScreen from "./Components/StartScreen"; // ✅ New component
 
 function App() {
   const [showPoems, setShowPoems] = useState(false);
   const [showOutro, setShowOutro] = useState(false);
+  const [showRandomWindow, setShowRandomWindow] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
   const bgMusic = useRef(new Audio("/videoplayback.m4a"));
@@ -32,6 +34,11 @@ function App() {
   };
 
   const handleIntroComplete = () => {
+    setShowRandomWindow(true);
+  };
+
+  const handleRandomWindowComplete = () => {
+    setShowRandomWindow(false);
     setShowPoems(true);
   };
 
@@ -41,9 +48,6 @@ function App() {
 
   return (
     <>
-      {/* Start Screen */}
-      {!isStarted && <StartScreen onStart={handleStart} />}
-
       {/* Mute/Unmute Button */}
       {isStarted && (
         <button
@@ -57,11 +61,19 @@ function App() {
       )}
 
       {/* Components */}
-      {!showPoems && !showOutro && (
+      {!isStarted && <StartScreen onStart={handleStart} />} {/* Start Screen */}
+
+      {!showPoems && !showOutro && !showRandomWindow && (
         <IntroCard onComplete={handleIntroComplete} />
-      )}
-      {showPoems && !showOutro && <Poems onComplete={handlePoemComplete} />}
-      {showOutro && <Outro />}
+      )} {/* Intro Card */}
+
+      {showRandomWindow && (
+        <RandomWindow onComplete={handleRandomWindowComplete} />
+      )} {/* Random Window */}
+
+      {showPoems && !showOutro && <Poems onComplete={handlePoemComplete} />} {/* Poems */}
+
+      {showOutro && <Outro />}  {/* Outro */}
     </>
   );
 }

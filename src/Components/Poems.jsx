@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Rose from "./Rose";
 
 const Poems = ({ onComplete }) => {
   const poems_texts = [
@@ -79,7 +80,7 @@ const Poems = ({ onComplete }) => {
     );
 
   const handleNextMessage = () => {
-    onComplete(); 
+    onComplete();
   };
 
   return (
@@ -91,6 +92,9 @@ const Poems = ({ onComplete }) => {
         SOME LOVELY POEMS FOR YOU
       </div>
       <div className="flex justify-center items-center h-fit">
+        <div className="absolute left-25 top-1/2 -translate-y-1/2">
+          <Rose />
+        </div>
         <div className="relative w-[90%] md:w-[60%] bg-[#ffddc0] bg-opacity-30 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
           <motion.div
             className="flex"
@@ -124,7 +128,7 @@ const Poems = ({ onComplete }) => {
               </motion.div>
             ))}
           </motion.div>
-          
+
           <button
             onClick={handlePrev}
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
@@ -138,6 +142,9 @@ const Poems = ({ onComplete }) => {
           >
             ❯
           </button>
+        </div>
+        <div className="absolute right-25 top-1/2 -translate-y-1/2">
+          <Rose />
         </div>
       </div>
 

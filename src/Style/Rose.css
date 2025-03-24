@@ -1,0 +1,72 @@
+.rose {
+  width: 80px;
+  height: 160px;
+  position: relative;
+  animation: sway 4s ease-in-out infinite;
+}
+
+.petal {
+  width: 25px;
+  height: 60px;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+  left: 27px;
+  border: 1px solid #f0f0f0;
+}
+
+.petal2 {
+  transform: rotate(-20deg) translateX(-10px);
+}
+
+.petal4 {
+  transform: rotate(-45deg) translateX(-22px);
+}
+
+.petal3 {
+  transform: rotate(20deg) translateX(10px);
+}
+
+.petal5 {
+  transform: rotate(45deg) translateX(22px);
+}
+
+.stem {
+  width: 5px;
+  height: 200px;
+  background-color: green;
+  position: absolute;
+  top: 48px;
+  left: 37px;
+  border-radius: 3px;
+}
+
+.leaf {
+  width: 12px;
+  height: 30px;
+  background-color: lime;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.leaf1 {
+  top: 60px;
+  left: 10px;
+  transform: rotate(-20deg);
+}
+.leaf2 {
+  top: 60px;
+  right: 10px;
+  transform: rotate(20deg);
+}
+
+@keyframes sway {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+}

@@ -3,10 +3,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import Confetti from "react-confetti";
 
 function IntroCard({ onComplete }) {
-  const [chats, setChats] = useState(`Hi... Jaag rhi h?`);
+  const [chats, setChats] = useState(
+    `As I'm not good in handcrafts and making diy gifts,`
+  );
   const [showConfetti, setShowConfetti] = useState(false);
 
   const messages = [
+    `As I'm not good in handcrafts and making diy gifts,`,
+    `I thought of making something special for you.`,
     `Hi... Jaag rhi h?`,
     `Kya kar rahi h?`,
     `Probably these are the messages that\nI've sent you the most...`,
@@ -16,11 +20,12 @@ function IntroCard({ onComplete }) {
     `Anyway, if you're seeing this message...`,
     `That means it's your birthday!`,
     `And I want to wish you a very, very happy birthday,`,
-    `My love. ❤️`,
-    `I hope you have a beautiful day ahead,\nfilled with joy and love.`,
-    `By the way... I've written some poems for you.`,
-    `A little sensual, a little romantic… and very special.`,
-    `I hope they make you smile.`,
+    `I hope you have a beautiful day ahead, filled with joy and love.`,
+    `I hope your day is as beautiful and special as you are.`,
+    `I hope you get everything you wish for, and more.`,
+    `Okay, so enough of the birthday wishes. 🙃`,
+    `And this boring template.`,
+    `Let's make this a bit more interesting.`,
   ];
 
   const handleNextMessage = () => {
@@ -28,11 +33,11 @@ function IntroCard({ onComplete }) {
 
     if (messages[nextIndex] === `That means it's your birthday!`) {
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 17000); 
+      setTimeout(() => setShowConfetti(false), 17000);
     }
 
     if (nextIndex === 0) {
-      onComplete(); 
+      onComplete();
     } else {
       setChats(messages[nextIndex]);
     }
