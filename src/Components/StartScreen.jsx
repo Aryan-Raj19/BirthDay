@@ -1,4 +1,5 @@
 import React from "react";
+import "../Style/StartScreen.css";
 
 const StartScreen = ({ onStart }) => {
   return (

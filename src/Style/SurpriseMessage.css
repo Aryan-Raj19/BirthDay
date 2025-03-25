@@ -1,0 +1,26 @@
+@keyframes glow {
+  0% {
+    opacity: 0.75;
+    text-shadow: 0 0 5px rgba(255, 221, 192, 0.8);
+  }
+  25% {
+    opacity: 0.8;
+    text-shadow: 0 0 7.5px rgba(255, 221, 192, 0.85);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 10px rgba(255, 221, 192, 0.9);
+  }
+  75% {
+    opacity: 0.9;
+    text-shadow: 0 0 12.5px rgba(255, 221, 192, 0.95);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 15px rgba(255, 221, 192, 1);
+  }
+}
+
+.glow {
+  animation: glow 4s ease-in infinite;
+}

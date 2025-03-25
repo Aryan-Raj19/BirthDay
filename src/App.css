@@ -9,23 +9,4 @@
   text-align: center;
 }
 
-@keyframes birthdayText {
-  0% {
-    opacity: 0;
-    transform: scale(0.9);
-    text-shadow: 0 0 5px rgba(255, 221, 192, 0);
-  }
-  50% {
-    opacity: 0.7;
-    transform: scale(1.05);
-    text-shadow: 0 0 15px rgba(255, 221, 192, 0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
 
-.animate-birthdayText {
-  animation: birthdayText 3s ease forwards;
-}

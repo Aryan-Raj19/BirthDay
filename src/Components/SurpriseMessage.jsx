@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import "../Style/SurpriseMessage.css";
 
 const messages = [
   "You make my heart race every time I see you.",
@@ -11,12 +12,12 @@ const messages = [
 ];
 
 const fixedPositions = [
-  { x: 800, y: 50 }, //1
-  { x: 250, y: 362 }, //2
-  { x: 425, y: 550 }, //3
-  { x: 50, y: 50 }, //4
-  { x: 600, y: 362 }, //5
-  { x: 425, y: 176 }, //6
+  { x: 800, y: 50 },
+  { x: 250, y: 362 },
+  { x: 425, y: 550 },
+  { x: 50, y: 50 },
+  { x: 600, y: 362 },
+  { x: 425, y: 176 },
 ];
 
 const SurpriseMessage = () => {
@@ -39,7 +40,7 @@ const SurpriseMessage = () => {
 
   return (
     <div className="relative w-[85vw] h-[85vh] rounded-xl">
-      {/* Display all previous messages at their fixed positions */}
+      {/* Display all previous messages */}
       {displayedMessages.map((msg, index) => (
         <motion.div
           key={index}
@@ -51,9 +52,9 @@ const SurpriseMessage = () => {
             y: `${msg.position.y}px`,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg text-2xl text-[#ffddc0]"
+          className="absolute p-4 rounded-lg text-2xl text-[#ffddc0] glow"
           style={{
-            fontFamily: "Dosis, sans-serif",
+            fontFamily: "Pacifico, cursive",
             width: "350px",
             height: "150px",
             justifyContent: "center",
@@ -78,7 +79,7 @@ const SurpriseMessage = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="absolute p-4 rounded-lg shadow-md border text-2xl bg-[#ffddc0] text-[#590016] border-[#590016]"
           style={{
-            fontFamily: "Dosis, sans-serif",
+            fontFamily: "Pacifico, cursive",
             width: "350px",
             height: "150px",
           }}
@@ -87,8 +88,9 @@ const SurpriseMessage = () => {
           <motion.button
             onClick={handleNextMessage}
             initial={{ scale: 0.9 }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
+            style={{ fontFamily: "Dosis, sans-serif" }}
             className="mt-4 bg-[#590016] text-[#ffddc0] px-4 py-2 rounded-md border border-[#ffddc0] hover:bg-[#4c0013] hover:scale-101 transition duration-300"
           >
             Next Message
