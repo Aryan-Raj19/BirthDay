@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import "../Style/SurpriseMessage.css";
 
 const messages = [
   "You make my heart race every time I see you.",
@@ -11,40 +10,35 @@ const messages = [
   "You make my world feel complete.",
 ];
 
-const getRandomPosition = () => {
-  const x = Math.random() * 70 + 10;
-  const y = Math.random() * 60 + 10;
-  return { x, y };
-};
+const fixedPositions = [
+  { x: 800, y: 50 }, //1
+  { x: 250, y: 362 }, //2
+  { x: 425, y: 550 }, //3
+  { x: 50, y: 50 }, //4
+  { x: 600, y: 362 }, //5
+  { x: 425, y: 176 }, //6
+];
 
 const SurpriseMessage = () => {
   const [displayedMessages, setDisplayedMessages] = useState([]);
   const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
-  const [currentPosition, setCurrentPosition] = useState(getRandomPosition());
-
-  useEffect(() => {
-    setCurrentPosition(getRandomPosition());
-  }, []);
 
   const handleNextMessage = () => {
     if (currentMessageIndex < messages.length) {
-      // Save the current message with the position it was displayed at
       setDisplayedMessages((prev) => [
         ...prev,
         {
           text: messages[currentMessageIndex],
-          position: currentPosition,
+          position: fixedPositions[currentMessageIndex],
         },
       ]);
 
-      // Move to next message and set new random position
       setCurrentMessageIndex((prev) => prev + 1);
-      setCurrentPosition(getRandomPosition());
     }
   };
 
   return (
-    <div className="relative w-full h-[500px] bg-[#ffddc0] rounded-xl shadow-md overflow-hidden">
+    <div className="relative w-[85vw] h-[85vh] rounded-xl">
       {/* Display all previous messages at their fixed positions */}
       {displayedMessages.map((msg, index) => (
         <motion.div
@@ -53,14 +47,18 @@ const SurpriseMessage = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: `${msg.position.x}%`,
-            y: `${msg.position.y}%`,
+            x: `${msg.position.x}px`,
+            y: `${msg.position.y}px`,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg shadow-md border bg-[#ffddc0] text-[#590016] border-[#590016]"
+          className="absolute p-4 rounded-lg text-2xl text-[#ffddc0]"
           style={{
             fontFamily: "Dosis, sans-serif",
-            maxWidth: "200px",
+            width: "350px",
+            height: "150px",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
           }}
         >
           {msg.text}
@@ -74,14 +72,15 @@ const SurpriseMessage = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: `${currentPosition.x}%`,
-            y: `${currentPosition.y}%`,
+            x: `${fixedPositions[currentMessageIndex].x}px`,
+            y: `${fixedPositions[currentMessageIndex].y}px`,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg shadow-md border bg-[#ffddc0] text-[#590016] border-[#590016]"
+          className="absolute p-4 rounded-lg shadow-md border text-2xl bg-[#ffddc0] text-[#590016] border-[#590016]"
           style={{
             fontFamily: "Dosis, sans-serif",
-            maxWidth: "200px",
+            width: "350px",
+            height: "150px",
           }}
         >
           <p>{messages[currentMessageIndex]}</p>
