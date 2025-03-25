@@ -9,6 +9,7 @@ import SurpriseMessage from "./Components/SurpriseMessage";
 import { Volume2, VolumeX } from "lucide-react";
 
 function App() {
+  const [showIntro, setShowIntro] = useState(true);
   const [showPoems, setShowPoems] = useState(false);
   const [showOutro, setShowOutro] = useState(false);
   const [showMessages, setShowMessages] = useState(false);
@@ -36,6 +37,7 @@ function App() {
   };
 
   const handleIntroComplete = () => {
+    setShowIntro(false);
     setShowRandomWindow(true);
   };
 
@@ -45,6 +47,7 @@ function App() {
   };
 
   const handlePoemComplete = () => {
+    setShowPoems(false);
     setShowOutro(true);
   };
 
@@ -67,7 +70,7 @@ function App() {
 
       {/* Components */}
       {!isStarted && <StartScreen onStart={handleStart} />}
-      {!showPoems && !showOutro && !showRandomWindow && (
+      {showIntro && !showPoems && !showOutro && !showRandomWindow && (
         <IntroCard onComplete={handleIntroComplete} />
       )}
       {showRandomWindow && (

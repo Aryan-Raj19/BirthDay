@@ -8,7 +8,7 @@ function Outro({ onComplete }) {
   );
 
   const messages = [
-    `I don't know whether I'm a good poet or not,`,
+    `I don't know whether I'm a good poet or not.`,
     `But I know that I'm a good lover.`,
     `And apart from these poems,`,
     `I want to say something from my heart.`,
