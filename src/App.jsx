@@ -5,11 +5,13 @@ import Poems from "./Components/Poems";
 import Outro from "./Components/Outro";
 import StartScreen from "./Components/StartScreen";
 import RandomWindow from "./Components/RandomWindow";
+import SurpriseMessage from "./Components/SurpriseMessage";
 import { Volume2, VolumeX } from "lucide-react";
 
 function App() {
   const [showPoems, setShowPoems] = useState(false);
   const [showOutro, setShowOutro] = useState(false);
+  const [showMessages, setShowMessages] = useState(false);
   const [showRandomWindow, setShowRandomWindow] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
@@ -46,34 +48,34 @@ function App() {
     setShowOutro(true);
   };
 
+  const handleOutroComplete = () => {
+    setShowOutro(false);
+    setShowMessages(true);
+  };
+
   return (
     <>
-      {/* Mute/Unmute Button */}
+      {/* Mute/Unmute button */}
       {isStarted && (
         <button
           onClick={handleToggleMute}
           className="fixed top-4 right-4 z-50 bg-[#590016] text-[#ffddc0] p-2 rounded-full shadow-md hover:bg-[#4c0013] transition border border-[#ffddc0] cursor-pointer"
-          aria-label={isMuted ? "Unmute" : "Mute"}
-          title={isMuted ? "Unmute" : "Mute"}
         >
           {isMuted ? <VolumeX size={24} /> : <Volume2 size={24} />}
         </button>
       )}
 
       {/* Components */}
-      {!isStarted && <StartScreen onStart={handleStart} />} {/* Start Screen */}
-
+      {!isStarted && <StartScreen onStart={handleStart} />}
       {!showPoems && !showOutro && !showRandomWindow && (
         <IntroCard onComplete={handleIntroComplete} />
-      )} {/* Intro Card */}
-
+      )}
       {showRandomWindow && (
         <RandomWindow onComplete={handleRandomWindowComplete} />
-      )} {/* Random Window */}
-
-      {showPoems && !showOutro && <Poems onComplete={handlePoemComplete} />} {/* Poems */}
-
-      {showOutro && <Outro />}  {/* Outro */}
+      )}
+      {showPoems && !showOutro && <Poems onComplete={handlePoemComplete} />}
+      {showOutro && <Outro onComplete={handleOutroComplete} />}
+      {showMessages && <SurpriseMessage />}
     </>
   );
 }

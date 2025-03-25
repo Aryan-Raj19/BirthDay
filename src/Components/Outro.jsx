@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FallingStarsOrHearts from "./FallingStarsOrHearts";
 
-function Outro() {
+function Outro({ onComplete }) {
   const [chats, setChats] = useState(
     `I don't know whether I'm a good poet or not.`
   );
@@ -33,19 +33,22 @@ function Outro() {
     `And I hope I didn’t end up making you cry.`,
     `And, once again,`,
     `Wishing you the happiest birthday, Hazel.`,
-    `Forever yours. ❤️`,
+    `Wait there is one more thing...`,
   ];
 
   const [showHearts, setShowHearts] = useState(true);
 
   const handleNextMessage = () => {
-    const nextIndex = (messages.indexOf(chats) + 1) % messages.length;
-    setChats(messages[nextIndex]);
+    const nextIndex = messages.indexOf(chats) + 1;
+    if (nextIndex < messages.length) {
+      setChats(messages[nextIndex]);
+    } else {
+      onComplete();
+    }
   };
 
   return (
     <>
-      {/* Falling Hearts/Stars Component */}
       <FallingStarsOrHearts showHearts={showHearts} />
 
       <div className="relative flex justify-center items-center h-170 overflow-hidden bg-[#ffddc0]">
@@ -57,11 +60,7 @@ function Outro() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className={`text-[#590016] text-3xl font-bold text-center ${
-                chats === "Forever yours. ❤️" // special message
-                  ? "text-4xl animate-pulse"
-                  : ""
-              }`}
+              className={`text-[#590016] text-3xl font-bold text-center`}
               style={{ fontFamily: "Dancing Script, cursive" }}
             >
               {chats}

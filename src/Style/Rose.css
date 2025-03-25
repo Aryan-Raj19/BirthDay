@@ -40,14 +40,16 @@
   top: 48px;
   left: 37px;
   border-radius: 3px;
+  border: 1px solid rgba(126, 252, 0, 0.375);
 }
 
 .leaf {
   width: 12px;
   height: 30px;
-  background-color: lime;
+  background-color:green;
   position: absolute;
   border-radius: 50%;
+  border: 1px solid rgba(126, 252, 0, 0.375);
 }
 
 .leaf1 {
