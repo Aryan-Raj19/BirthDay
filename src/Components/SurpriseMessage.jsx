@@ -11,13 +11,14 @@ const messages = [
   "You make my world feel complete.",
 ];
 
+// Positions adjusted to viewport size for better responsiveness
 const fixedPositions = [
-  { x: 800, y: 50 },
-  { x: 250, y: 362 },
-  { x: 425, y: 550 },
-  { x: 50, y: 50 },
-  { x: 600, y: 362 },
-  { x: 425, y: 176 },
+  { x: "53vw", y: "5vh" },
+  { x: "14vw", y: "45vh" },
+  { x: "30vw", y: "65vh" },
+  { x: "4vw", y: "5vh" },
+  { x: "45vw", y: "45vh" },
+  { x: "30vw", y: "25vh" },
 ];
 
 const SurpriseMessage = () => {
@@ -33,13 +34,12 @@ const SurpriseMessage = () => {
           position: fixedPositions[currentMessageIndex],
         },
       ]);
-
       setCurrentMessageIndex((prev) => prev + 1);
     }
   };
 
   return (
-    <div className="relative w-[85vw] h-[85vh] rounded-xl">
+    <div className="relative w-[88vw] h-[88vh] rounded-xl overflow-hidden">
       {/* Display all previous messages */}
       {displayedMessages.map((msg, index) => (
         <motion.div
@@ -48,18 +48,16 @@ const SurpriseMessage = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: `${msg.position.x}px`,
-            y: `${msg.position.y}px`,
+            x: msg.position.x,
+            y: msg.position.y,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg text-2xl text-[#ffddc0] glow"
+          className="absolute p-4 rounded-lg text-[.8rem] md:text-2xl sm:text-2xl text-[#ffddc0] glow h-[10vh] w-[35vw] md:h-[15vh] md:w-[20vw] sm:h-[12vh] sm:w-[17vw]"
           style={{
             fontFamily: "Pacifico, cursive",
-            width: "350px",
-            height: "150px",
+            display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            display: "flex",
           }}
         >
           {msg.text}
@@ -73,15 +71,17 @@ const SurpriseMessage = () => {
           animate={{
             opacity: 1,
             scale: 1,
-            x: `${fixedPositions[currentMessageIndex].x}px`,
-            y: `${fixedPositions[currentMessageIndex].y}px`,
+            x: fixedPositions[currentMessageIndex].x,
+            y: fixedPositions[currentMessageIndex].y,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg shadow-md border text-2xl bg-[#ffddc0] text-[#590016] border-[#590016]"
+          className="absolute p-4 rounded-lg shadow-md border text-[.8rem] md:text-2xl sm:text-2xl bg-[#ffddc0] text-[#590016] border-[#590016] w-[35vw] md:h-[20vh] md:w-[20vw] sm:h-[17vh] sm:w-[17vw]"
           style={{
             fontFamily: "Pacifico, cursive",
-            width: "350px",
-            height: "150px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <p>{messages[currentMessageIndex]}</p>
@@ -90,8 +90,12 @@ const SurpriseMessage = () => {
             initial={{ scale: 0.9 }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            style={{ fontFamily: "Dosis, sans-serif" }}
             className="mt-4 bg-[#590016] text-[#ffddc0] px-4 py-2 rounded-md border border-[#ffddc0] hover:bg-[#4c0013] hover:scale-101 transition duration-300"
+            style={{
+              fontSize: "clamp(0.8rem, 1vw, 1rem)",
+              padding: "clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem)",
+              fontFamily: "Dosis, sans-serif",
+            }}
           >
             Next Message
           </motion.button>

@@ -44,9 +44,9 @@ function IntroCard({ onComplete }) {
   };
 
   return (
-    <div className="box flex justify-center items-center h-100">
+    <div className="flex justify-center items-center h-100 px-4">
       {showConfetti && <Confetti />}
-      <div className="container flex justify-center gap-10 bg-[#ffddc0] p-6 m-4 max-w-2xl h-50 mx-auto rounded-2xl">
+      <div className="flex flex-col justify-center gap-6 bg-[#ffddc0] p-6 md:p-8 max-w-2xl w-full rounded-2xl shadow-lg">
         <AnimatePresence mode="wait">
           <motion.p
             key={chats}
@@ -54,7 +54,7 @@ function IntroCard({ onComplete }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="text-[#590016] text-3xl font-bold"
+            className="text-[#590016] text-xl sm:text-2xl md:text-3xl font-bold text-center leading-relaxed"
             style={{ fontFamily: "Dancing Script, cursive" }}
           >
             {chats}
@@ -63,7 +63,7 @@ function IntroCard({ onComplete }) {
 
         <button
           onClick={handleNextMessage}
-          className="fixed mt-20 px-4 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] hover:scale-101 transition cursor-pointer"
+          className="mt-4 mx-auto px-5 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] hover:scale-105 transition duration-300 text-sm sm:text-base md:text-lg"
         >
           Next Message
         </button>

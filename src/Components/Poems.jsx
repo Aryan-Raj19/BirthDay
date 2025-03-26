@@ -86,16 +86,19 @@ const Poems = ({ onComplete }) => {
   return (
     <>
       <div
-        className="poemheading mb-7 font-bold text-3xl text-[#ffddc0]"
+        className="poemheading mb-5 font-bold text-2xl md:text-3xl text-[#ffddc0] text-center"
         style={{ fontFamily: "Shadows Into Light, cursive" }}
       >
         SOME LOVELY POEMS FOR YOU
       </div>
-      <div className="flex justify-center items-center h-fit">
-        <div className="absolute left-25 top-1/2 -translate-y-1/2">
+
+      <div className="relative flex justify-center items-center">
+        {/* Left Rose */}
+        <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2">
           <Rose />
         </div>
-        <div className="relative w-[90%] md:w-[60%] bg-[#ffddc0] bg-opacity-30 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
+
+        <div className="relative w-[85%] md:w-[50%] sm:w-[40%] bg-[#ffddc0] bg-opacity-30 backdrop-blur-lg rounded-2xl shadow-xl overflow-hidden">
           <motion.div
             className="flex"
             initial={{ x: `${-currentIndex * 100}%` }}
@@ -108,10 +111,10 @@ const Poems = ({ onComplete }) => {
             {poems_texts.map((poem, index) => (
               <motion.div
                 key={index}
-                className="min-w-full min-h-full flex justify-center items-center px-16 py-8"
+                className="min-w-full flex justify-center items-center px-6 md:px-16 py-6"
               >
                 <motion.div
-                  className="group w-full p-6 bg-[#fedec3e3] bg-opacity-40 backdrop-blur-lg rounded-xl shadow-lg border border-[#4c0013]"
+                  className="group w-full p-6 bg-[#fedec3e3] rounded-xl shadow-lg border border-[#4c0013]"
                   whileHover={{
                     rotate: [-3, 3, 0],
                     scale: 1.009,
@@ -119,7 +122,7 @@ const Poems = ({ onComplete }) => {
                   transition={{ duration: 0.3, ease: "easeInOut" }}
                 >
                   <p
-                    className="text-[#590016] text-xl font-semibold leading-relaxed text-center whitespace-pre-wrap"
+                    className="text-[#590016] text-[.55rem] md:text-xl sm:text-xl font-semibold leading-relaxed text-center whitespace-pre-wrap"
                     style={{ fontFamily: "Dosis, sans-serif" }}
                   >
                     {poem}
@@ -129,28 +132,32 @@ const Poems = ({ onComplete }) => {
             ))}
           </motion.div>
 
+          {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300"
           >
             ❮
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] hover:scale-110 transition duration-300 ease-in-out cursor-pointer"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300"
           >
             ❯
           </button>
-        </div>
-        <div className="absolute right-25 top-1/2 -translate-y-1/2">
+        </div> 
+
+        {/* Right Rose */}
+        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
           <Rose />
         </div>
       </div>
 
+      {/* Next Tab Button */}
       <button
         onClick={handleNextMessage}
-        className="mt-4 px-4 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] hover:scale-101 transition cursor-pointer border border-[#ffddc0]"
+        className="mt-6 px-6 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] transition cursor-pointer border border-[#ffddc0]"
       >
         Next Tab
       </button>
