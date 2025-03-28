@@ -8,25 +8,25 @@ function IntroCard({ onComplete }) {
   const [showConfetti, setShowConfetti] = useState(false);
 
   const messages = [
-    `Hi... Jaag rhi h?`,  
-    `Kya kar rahi h?`,  
-    `Probably these are the messages that I've sent you the most...`,  
-    `But today, I want to say something different.`,  
-    `I thought of making something special for you,`,  
-    `Since I'm not a good artist or great at DIY gifts,`,  
-    `But I still wanted to create something,`,  
-    `Something from my own hands,`,  
-    `So... this is your little surprise.`,  
-    `And if you're seeing these messages...`,  
-    `That means it's your birthday!`,  
-    `Happy birthday, love.`,  
-    `I hope your day is as beautiful and special as you are.`,  
-    `And I hope you get everything you wish for, and more.`,  
-    `And I love you.`,  
-    `Haha, just kidding… or maybe not 🙃`,  
-    `Anyway, enough of these wishes 🙃`,  
-    `And this boring template.`,  
-    `Let's make this a bit more interesting.`  
+    `Hi... Jaag rhi h?`,
+    `Kya kar rahi h?`,
+    `Probably these are the messages that I've sent you the most...`,
+    `But today, I want to say something different.`,
+    `I thought of making something special for you,`,
+    `Since I'm not a good artist or great at DIY gifts,`,
+    `But I still wanted to create something,`,
+    `Something from my own hands,`,
+    `So... this is your little surprise.`,
+    `And if you're seeing these messages...`,
+    `That means it's your birthday!`,
+    `Happy birthday, love.`,
+    `I hope your day is as beautiful and special as you are.`,
+    `And I hope you get everything you wish for, and more.`,
+    `And I love you.`,
+    `Haha, just kidding… or maybe not 🙃`,
+    `Anyway, enough of these wishes 🙃`,
+    `And this boring template.`,
+    `Let's make this a bit more interesting.`,
   ];
 
   const handleNextMessage = () => {
@@ -46,17 +46,7 @@ function IntroCard({ onComplete }) {
 
   return (
     <div className="flex justify-center items-center h-100 px-4">
-      {showConfetti && (
-        <Confetti
-          numberOfPieces={400}
-          recycle={false}
-          gravity={0.5}
-          initialVelocityY={12}
-          onConfettiComplete={(confetti) => {
-            confetti.reset(); // Stops confetti cleanly
-          }}
-        />
-      )}
+      {showConfetti && <Confetti />}
       <div className="flex flex-col justify-center gap-6 bg-[#ffddc0] p-6 md:p-8 max-w-2xl w-full rounded-2xl shadow-lg border border-[#590016] drop-shadow-[0_0_7px_#ffddc0]">
         <AnimatePresence mode="wait">
           <motion.p
@@ -73,6 +63,7 @@ function IntroCard({ onComplete }) {
               cursorColor="#590016"
               typeSpeed={40}
               eraseSpeed={20}
+              className="flex justify-center items-center text-center"
             />
           </motion.p>
         </AnimatePresence>

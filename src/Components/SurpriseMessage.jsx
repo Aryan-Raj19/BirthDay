@@ -75,7 +75,7 @@ const SurpriseMessage = () => {
             y: fixedPositions[currentMessageIndex].y,
           }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute p-4 rounded-lg shadow-md border text-[.8rem] md:text-2xl sm:text-2xl bg-[#ffddc0] text-[#590016] border-[#590016] w-[35vw] md:h-[20vh] md:w-[20vw] sm:h-[17vh] sm:w-[17vw]"
+          className="absolute p-4 rounded-lg shadow-md border text-[.8rem] md:text-2xl sm:text-2xl bg-[#ffddc0] text-[#590016] border-[#590016] w-[35vw] md:h-[25vh] md:w-[20vw] sm:h-[17vh] sm:w-[17vw]"
           style={{
             fontFamily: "Pacifico, cursive",
             display: "flex",
