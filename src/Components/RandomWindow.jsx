@@ -7,7 +7,7 @@ const RandomWindow = ({ onComplete }) => {
 
   const messages = [
     `So from interesting, I meant just to move this window around.`,  
-    `But hey, even this wasn’t that easy.`,  
+    `But hey, even this wasn't that easy.`,  
     `I had to write a bunch of code to make this work.`,  
     `But I'm happy that it worked.`,  
     `And I hope you liked it.`,  
