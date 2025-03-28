@@ -17,7 +17,7 @@ function IntroCard({ onComplete }) {
     `But I still wanted to create something,`,  
     `Something from my own hands,`,  
     `So... this is your little surprise.`,  
-    `And if you're seeing this message...`,  
+    `And if you're seeing these messages...`,  
     `That means it's your birthday!`,  
     `Happy birthday, love.`,  
     `I hope your day is as beautiful and special as you are.`,  

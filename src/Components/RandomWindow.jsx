@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const RandomWindow = ({ onComplete }) => {
   const [chats, setChats] = useState(
-    `Ok, So from interesting I meant just to move this window around.`
+    `So from interesting, I meant just to move this window around.`
   );
 
   const messages = [
