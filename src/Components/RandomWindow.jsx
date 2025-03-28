@@ -6,14 +6,14 @@ const RandomWindow = ({ onComplete }) => {
   );
 
   const messages = [
-    `Ok, So from interesting I meant just to move this window around.`,
-    `But hey even this was not that easy.`,
-    `I had to write a bunch of codes to make this work.`,
-    `But I'm happy that it worked.`,
-    `And I hope you liked it.`,
-    `By the way... I've written some poems for you.`,
-    `A little sensual, a little romantic… and very special.`,
-    `I hope they make you smile.`,
+    `So from interesting, I meant just to move this window around.`,  
+    `But hey, even this wasn’t that easy.`,  
+    `I had to write a bunch of code to make this work.`,  
+    `But I'm happy that it worked.`,  
+    `And I hope you liked it.`,  
+    `Oh, and… I've written some poems for you.`,  
+    `A little sensual, a little romantic… and very special.`,  
+    `I hope they make you smile.`  
   ];
 
   const [position, setPosition] = useState({ top: 0, left: 0 });
