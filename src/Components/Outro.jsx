@@ -4,7 +4,7 @@ import FallingStarsOrHearts from "./FallingStarsOrHearts";
 
 function Outro({ onComplete }) {
   const [chats, setChats] = useState(
-    `I don't know whether I'm a good poet or not.`
+    `I don't know if I'm a good poet or not.`
   );
 
   const messages = [
