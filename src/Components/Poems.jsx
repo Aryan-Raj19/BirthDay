@@ -146,7 +146,7 @@ const Poems = ({ onComplete }) => {
           >
             ❯
           </button>
-        </div> 
+        </div>
 
         {/* Right Rose */}
         <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2">
@@ -155,12 +155,14 @@ const Poems = ({ onComplete }) => {
       </div>
 
       {/* Next Tab Button */}
-      <button
-        onClick={handleNextMessage}
-        className="mt-6 px-6 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] transition cursor-pointer border border-[#ffddc0]"
-      >
-        Next Tab
-      </button>
+      {currentIndex === poems_texts.length - 1 && (
+        <button
+          onClick={handleNextMessage}
+          className="mt-6 px-6 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] transition cursor-pointer border border-[#ffddc0]"
+        >
+          Next Tab
+        </button>
+      )}
     </>
   );
 };
