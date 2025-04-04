@@ -135,14 +135,14 @@ const Poems = ({ onComplete }) => {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300"
+            className="absolute left-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300 cursor-pointer"
           >
             ❮
           </button>
 
           <button
             onClick={handleNext}
-            className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300"
+            className="absolute right-2 top-1/2 -translate-y-1/2 bg-[#ffffff33] text-[#590016] p-3 md:p-4 rounded-full shadow-md border border-[#590016] backdrop-blur-md hover:bg-[#590016] hover:text-[#ffddc0] transition duration-300 cursor-pointer"
           >
             ❯
           </button>

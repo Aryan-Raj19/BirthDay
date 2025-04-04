@@ -70,7 +70,7 @@ function IntroCard({ onComplete }) {
 
         <button
           onClick={handleNextMessage}
-          className="mt-4 mx-auto px-5 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] hover:scale-105 transition duration-300 text-sm sm:text-base md:text-lg pulse"
+          className="mt-4 mx-auto px-5 py-2 bg-[#590016] text-[#ffddc0] rounded-md hover:bg-[#4c0013] hover:scale-105 transition duration-300 text-sm sm:text-base md:text-lg pulse cursor-pointer"
         >
           Next Message
         </button>

@@ -90,7 +90,7 @@ const SurpriseMessage = () => {
             initial={{ scale: 0.9 }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
-            className="mt-4 bg-[#590016] text-[#ffddc0] px-4 py-2 rounded-md border border-[#ffddc0] hover:bg-[#4c0013] hover:scale-101 transition duration-300"
+            className="mt-4 bg-[#590016] text-[#ffddc0] px-4 py-2 rounded-md border border-[#ffddc0] hover:bg-[#4c0013] hover:scale-101 transition duration-300 cursor-pointer"
             style={{
               fontSize: "clamp(0.8rem, 1vw, 1rem)",
               padding: "clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem)",
