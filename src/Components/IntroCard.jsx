@@ -49,7 +49,7 @@ function IntroCard({ onComplete }) {
       {showConfetti && <Confetti />}
       <div className="flex flex-col justify-center gap-6 bg-[#ffddc0] p-6 md:p-8 max-w-2xl w-full rounded-2xl shadow-lg border border-[#590016] drop-shadow-[0_0_7px_#ffddc0]">
         <AnimatePresence mode="wait">
-          <motion.p
+          <motion.div
             key={chats}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,9 +63,11 @@ function IntroCard({ onComplete }) {
               cursorColor="#590016"
               typeSpeed={40}
               eraseSpeed={20}
-              className="flex justify-center items-center text-center"
+              textStyle={{
+                textAlign: "center",
+              }}
             />
-          </motion.p>
+          </motion.div>
         </AnimatePresence>
 
         <button
